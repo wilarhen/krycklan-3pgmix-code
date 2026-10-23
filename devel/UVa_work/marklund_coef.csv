@@ -1,0 +1,26 @@
+species,component,marklund_component,function,page,page_printed,predictors,a,b,c,R,S_f,n
+Pinus sylvestris,stem,stam p.b. (stem over bark),T-1,20,FALSE,d/(d+13),-2.3388,11.3264,13,0.989,0.292,488
+Pinus sylvestris,stemwood,stamved (stem wood),T-5,22,FALSE,d/(d+14),-2.2184,11.4219,14,0.983,0.300,461
+Pinus sylvestris,stembark,stambark (stem bark),T-9,24,FALSE,d/(d+16),-2.9748,8.8489,16,0.964,0.339,461
+Pinus sylvestris,branch,levande grenar inkl. barr (live branches incl. needles),T-13,26,FALSE,d/(d+10),-2.8604,9.1015,10,0.949,0.517,482
+Pinus sylvestris,foliage,barr (needles),T-17,28,FALSE,d/(d+7),-3.7983,7.7681,7,0.917,0.574,482
+Pinus sylvestris,deadbranch,doda grenar (dead branches),T-21,30,FALSE,d/(d+10),-5.3338,9.5938,10,0.861,0.956,467
+Pinus sylvestris,stumprootsystem,stubbrotsystem (stump-root system),T-25,32,TRUE,d/(d+12),-3.3913,11.1106,12,0.979,0.364,296
+Pinus sylvestris,stump,stubbe (stump),T-28,34,FALSE,d/(d+15),-3.9657,11.0481,15,0.972,0.415,306
+Pinus sylvestris,roots_ge5cm,rotter >= 5 cm (roots >= 5 cm),T-31,36,FALSE,d/(d+9),-6.3413,13.2902,9,0.943,0.556,286
+Pinus sylvestris,roots_lt5cm,rotter < 5 cm (roots < 5 cm),T-34,38,FALSE,d/(d+10),-3.8375,8.8795,10,0.949,0.472,305
+Picea abies,stem,stam p.b. (stem over bark),G-1,40,FALSE,d/(d+14),-2.0571,11.3341,14,0.994,0.238,546
+Picea abies,stemwood,stamved (stem wood),G-4,42,FALSE,d/(d+14),-2.2471,11.4873,14,0.991,0.243,505
+Picea abies,stembark,stambark (stem bark),G-7,44,TRUE,d/(d+15),-3.3912,9.8364,15,0.983,0.287,505
+Picea abies,branch,levande grenar inkl. barr (live branches incl. needles),G-11,46,FALSE,d/(d+13),-1.2804,8.5242,13,0.972,0.387,544
+Picea abies,foliage,barr (needles),G-15,48,FALSE,d/(d+12),-1.9602,7.8171,12,0.948,0.500,544
+Picea abies,deadbranch,doda grenar (dead branches),G-19,50,TRUE,d/(d+18),-4.3308,9.9550,18,0.845,1.094,525
+Picea abies,stumprootsystem,stubbrotsystem (stump-root system),G-23,52,FALSE,d/(d+14),-2.4447,10.5381,14,0.985,0.342,316
+Picea abies,stump,stubbe (stump),G-26,54,TRUE,d/(d+17),-3.3645,10.6686,17,0.979,0.397,328
+Picea abies,roots_ge5cm,rotter >= 5 cm (roots >= 5 cm),G-28,55,TRUE,d/(d+8),-6.3851,13.3703,8,0.970,0.440,281
+Picea abies,roots_lt5cm,rotter < 5 cm (roots < 5 cm),G-31,57,TRUE,d/(d+12),-2.5706,7.6283,12,0.962,0.416,329
+Betula,stem,stam p.b. (stem over bark),B-1,59,TRUE,d/(d+8),-3.0932,11.0735,8,0.991,0.280,240
+Betula,stemwood,stamved (stem wood),B-4,61,TRUE,d/(d+11),-2.3327,10.8109,11,0.985,0.245,212
+Betula,stembark,stambark (stem bark),B-7,63,TRUE,d/(d+14),-3.2518,10.3876,14,0.973,0.317,212
+Betula,branch,lev.grenar (live branches; leaves not stated),B-11,65,TRUE,d/(d+10),-3.3633,10.2806,10,0.961,0.531,235
+Betula,deadbranch,doda grenar (dead branches),B-15,67,TRUE,d/(d+5),-5.9507,7.9266,5,0.778,1.182,212

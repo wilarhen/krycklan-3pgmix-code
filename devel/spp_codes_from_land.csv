@@ -1,0 +1,11 @@
+code,definition,Layer_1,Layer_2,Layer_3,Planted_1,Planted_2,Planted_3
+111,Pine forest outside wet area            ,Pinus sylvestris,NA,NA,2000,,
+112,Spruce forest outside wet area,Picea abies,NA,NA,2000,,
+113,Mixed conifer outside wet area,Pinus sylvestris,Picea abies,NA,1000,1000,
+114,Broadleaf conifer mix outside wet area,Betula,Pinus sylvestris,Picea abies,1000,500,500
+115,Trivial broadleaf   outside wet area,Betula,NA,NA,2000,,
+121,Pine forest on wet area,Pinus sylvestris,NA,NA,2000,,
+122,Spruce forest on wet area,Picea abies,NA,NA,2000,,
+123,Mixed conifer on wet area,Pinus sylvestris,Picea abies,NA,1000,1000,
+124,Broadleaf conifer on wet area,Betula,Pinus sylvestris,Picea abies,1000,500,500
+125,Trivial broadleaf on wet area,Betula,NA,NA,2000,,
