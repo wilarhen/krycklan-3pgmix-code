@@ -1,5 +1,7 @@
 # Krycklan 3-PGmix: analysis and data-cube code
 
+**DOI.** 10.5281/zenodo.23614212 (reserved; it resolves on publication of the record).
+
 Code for Lara Henao, W., Wallerman, J., Gessler, A., Luković, M., Martínez-García, E., Peichl, M., Forsman, M., Valbuena, R., "Where high-resolution inputs stop producing high-resolution predictions: diagnosing information loss in a gridded process-based forest productivity model", in review at Environmental Modelling & Software. The corrected data cube it builds is deposited separately (doi:10.5281/zenodo.23472784, reserved).
 
 Licence: the code is licensed under the GNU General Public License version 3 or later (GPL-3.0-or-later), with the version 3 text in `LICENSE`.
@@ -48,6 +50,8 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 | `get_segmented_trees.r` | R with Python through reticulate | not recorded |
 
 Other R packages called: readxl, dplyr, tidyr, ggplot2, data.table, qs2, ncdf4, R.utils. They are not included.
+
+The pipeline writes its per-sector archives with qs2. The package qs is used only as a fallback for legacy archives and was removed from CRAN in January 2026, so a reader needs qs2.
 
 ## Hard-coded paths a reader must change
 
