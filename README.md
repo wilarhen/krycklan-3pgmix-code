@@ -2,7 +2,7 @@
 
 **DOI.** 10.5281/zenodo.23614212 (reserved; it resolves on publication of the record).
 
-Code for Lara Henao, W., Wallerman, J., Gessler, A., Luković, M., Martínez-García, E., Peichl, M., Forsman, M., Valbuena, R., "Where high-resolution inputs stop producing high-resolution predictions: diagnosing information loss in a gridded process-based forest productivity model", in review at Environmental Modelling & Software. The corrected data cube it builds is deposited separately (doi:10.5281/zenodo.23472784, reserved).
+Code for Lara Henao, W., Wallerman, J., Gessler, A., Martínez-García, E., Luković, M., Forsman, M., Peichl, M., Valbuena, R., "Where high-resolution inputs stop producing high-resolution predictions: diagnosing information loss in a gridded process-based forest productivity model", in review at Environmental Modelling & Software. The corrected data cube it builds is deposited separately (doi:10.5281/zenodo.23472784, reserved).
 
 Licence: the code is licensed under the GNU General Public License version 3 or later (GPL-3.0-or-later), with the version 3 text in `LICENSE`.
 
