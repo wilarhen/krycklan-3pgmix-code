@@ -34,7 +34,7 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 6. **Plot-level runs with the corrections.** `16_preflight_corrected_V1.R` (feeds phase 7); `36_alphacx_zero_bias.R`; `57_table7_2016_2018_basis.R`.
 7. **Ceilings.** Set `VARIANT_KEEP` in `ceiling_config.R` (run it once to list the variants), then `bash run_ceiling_analysis.sh` (scripts 23, 24, 25).
 8. **Plot-mean statistics and tables.** `26_plotlevel_stats.R`, then `33_table6_predictors.R`, `34_variant_tables.R`, `37_elasticity_interval.R`, `38_section4_supporting.R`, `39_alphacx_slope_from_sweep.R`, `40_dispersion_vs_elasticity.R`, `41_tier2_support.R`, `43_tier5_support.R`.
-9. **Figures.** Figure 1: `29_fig1_site_v2.R` (`server/29_fig1_site_v2.R` is the copy run on the server, which holds the national DEM). Figure 2 is drawn in the manuscript. Figure 3: `30_fig3_initial.R`, then `42_fig3_annotations.R`. Figures 4 to 6: `35_figures_corrected_species.R` (it replaces the authors' earlier `27_make_figures.R`, not included).
+9. **Figures.** Figure 1: `29_fig1_site_v2.R` (`server/29_fig1_site_v2.R` is the copy run on the server, which holds the national DEM). Figure 2 has its own source and PDF in the manuscript repository (`fig/fig2_workflow.tex`), not in this record. Figure 3: `30_fig3_initial.R`, then `42_fig3_annotations.R`. Figures 4 to 6: `35_figures_corrected_species.R` (it replaces the authors' earlier `27_make_figures.R`, not included).
 
 **Standalone checks**, cited for individual statements in the paper: `22_check_srad.R`, `28_foliage_fraction.R`, `31_soil_moisture_test.R`, `32_aspect_test.R`, `44` to `50`, `56_cube_qc_fail_check.R`, `devel/UVa_diagnostics.R`, `devel/UVa_work/patches/which_column_is_species.R` (the species-column check). On the processing server, with a sector number as first argument: `51_sector_grid_crops.R`, `52_site_misindex_check.R`, `53_site_misindex_gpp_sensitivity.R`, `54_residue_by_input_list.R`, and the stem-density test `58a_stem_density_plot_cells.R`, `58b_stem_density_worker.R <sector> 10 FALSE <dir>`, `58c_stem_density_combine.R`. `55_tall_cell_rerun.R` reruns the tall cells of one saved sector. `devel/get_segmented_trees.r` is the individual-tree crown segmentation behind the airborne-laser stem density (script 11).
 
@@ -47,9 +47,16 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 | Cube scoring (03) | Server and local machine | as above, or the local versions |
 | Plot-level runs, statistics, tables, figures 1 (local copy), 4 to 6, and the other checks | Local machine | R 4.6.1, terra 1.9-27, sf 1.1.1, r3PG 0.1.6 |
 | `modis_dsr_export.js` | Google Earth Engine | not recorded |
-| `get_segmented_trees.r` | R with Python through reticulate | not recorded |
+| `get_segmented_trees.r` (crown segmentation) | Local machine | lasR, with lasRtools, lidR, terra, sf and R.utils; versions not recorded |
 
-Other R packages called: readxl, dplyr, tidyr, ggplot2, data.table, qs2, ncdf4, R.utils. They are not included.
+R packages the code loads, none of them included:
+
+- On CRAN: data.table, dplyr, geodata, ggplot2, lidR, lubridate, magrittr, maps, ncdf4, patchwork, purrr, qs2, r3PG, readxl, rlang, R.utils, scales, sf, stringr, terra, tidyr, tidyverse and units, with parallel, stats and utils from base R.
+- lasR, not on CRAN but publicly available through r-universe (r-lidar.r-universe.dev): the crown segmentation in `get_segmented_trees.r` is built from its functions.
+- lasRtools, the authors' helper package, not publicly available: `get_segmented_trees.r` uses it only to locate and group the input tiles, which sets each sector's tiles and buffer, and to plot.
+- wilaRtools, the authors' package, not publicly available: loaded only by the initial-cube script, `polygon_grids_v01.r`.
+
+The corrected cube, its assembly and quality control, and every result behind Figures 4 to 6 and Table 7 of the paper need only base R and packages on CRAN.
 
 The pipeline writes its per-sector archives with qs2. The package qs is used only as a fallback for legacy archives and was removed from CRAN in January 2026, so a reader needs qs2.
 
