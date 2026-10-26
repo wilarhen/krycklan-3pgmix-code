@@ -13,7 +13,7 @@ For publication, comments and five printed messages were edited to remove refere
 ## What can be reproduced
 
 - **The corrected cube is reproducible** from this code and the inputs listed below: `devel/iteration_by_sectors/server/polygon_grids_v03_server.r` (run per sector by `run_sectors.sh`), then `devel/UVa_work/server/20_assemble_cube.R` and `21_cube_qc.R`. These are the copies that ran on the processing server.
-- **The initial cube is not reproducible from this code.** `devel/polygon_grids_v01.r` is the version that built its per-sector tiles (identical to the file committed on 21 November 2025, the day the 100 tiles were written). The step that mosaicked those tiles into `out_3PG_netcdf/GPP.nc` is absent: no script in the repository writes that NetCDF, and the file's metadata records no script, path or parameter. Scripts that read the initial cube (03, 04, 06, 07, 30 and others) can therefore only be rerun against the authors' copy of `GPP.nc`.
+- **The initial cube is the 100 per-sector GeoTIFF tiles written by `devel/polygon_grids_v01.r`** on 21–22 November 2025 (09:23 to 00:14). The file here is byte-identical to the version committed on 21 November 2025, the day the tiles were written. The tiles are not included in this record; the authors hold three copies, verified against a SHA-256 list. `out_3PG_netcdf/GPP.nc` is a one-off NetCDF conversion of those tiles, made on 15 December 2025 to share the cube, not a separate product; its values equal the mosaic of the tiles cell for cell. It was written by `devel/mosaic_grids.r`, whose lines 31 to 52 build a virtual mosaic of the tiles and write it with `terra::writeCDF`; the rest of that file is plotting and, from line 164, a copy of `polygon_grids_v01.r` lines 36 to 248. Scripts 03, 04, 06, 13, 14 and 43 and `devel/UVa_diagnostics.R` read `GPP.nc`; script 30 reads the tiles.
 
 ## Data the scripts read (not included)
 
@@ -43,7 +43,7 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 | Group | Where it ran | Versions |
 |---|---|---|
 | Corrected-cube pipeline, assembly and QC; scripts 29 (server copy), 30, 51 to 54 and 58 | Processing server | R 4.5.2, terra 1.8-86, sf 1.0.23, r3PG 0.1.6 (terra logged; R and sf are the server's installed versions, not logged) |
-| Initial cube (`polygon_grids_v01.r`) | Processing server | terra 1.8-80 (from the cube's metadata); R and r3PG not recorded |
+| Initial cube: tiles (`polygon_grids_v01.r`) and their NetCDF conversion (`mosaic_grids.r`) | Processing server | terra 1.8-80 for the conversion (from the metadata of `GPP.nc`); for the tiles, terra, R and r3PG not recorded |
 | Cube scoring (03) | Server and local machine | as above, or the local versions |
 | Plot-level runs, statistics, tables, figures 1 (local copy), 4 to 6, and the other checks | Local machine | R 4.6.1, terra 1.9-27, sf 1.1.1, r3PG 0.1.6 |
 | `modis_dsr_export.js` | Google Earth Engine | not recorded |
@@ -51,10 +51,10 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 
 R packages the code loads, none of them included:
 
-- On CRAN: data.table, dplyr, geodata, ggplot2, lidR, lubridate, magrittr, maps, ncdf4, patchwork, purrr, qs2, r3PG, readxl, rlang, R.utils, scales, sf, stringr, terra, tidyr, tidyverse and units, with parallel, stats and utils from base R.
+- On CRAN: data.table, dplyr, geodata, ggplot2, lidR, lubridate, magrittr, maps, ncdf4, patchwork, purrr, qs2, r3PG, readxl, rlang, R.utils, scales, sf, stringr, terra, tidyr, tidyverse, units and zoo, with parallel, stats and utils from base R.
 - lasR, not on CRAN but publicly available through r-universe (r-lidar.r-universe.dev): the crown segmentation in `get_segmented_trees.r` is built from its functions.
 - lasRtools, the authors' helper package, not publicly available: `get_segmented_trees.r` uses it only to locate and group the input tiles, which sets each sector's tiles and buffer, and to plot.
-- wilaRtools, the authors' package, not publicly available: loaded only by the initial-cube script, `polygon_grids_v01.r`.
+- wilaRtools, the authors' package, not publicly available: loaded only by the initial-cube script, `polygon_grids_v01.r`, and by `mosaic_grids.r`, which repeats that script's code.
 
 The corrected cube, its assembly and quality control, and every result behind Figures 4 to 6 and Table 7 of the paper need only base R and packages on CRAN.
 
@@ -161,6 +161,10 @@ Every absolute path in the code, by file and line. Most point to the authors' in
 | `devel/iteration_by_sectors/server/polygon_grids_v03_server.r` | 30 | `/home/wilar/Documents/SLU/3PG/devel/R` |
 | `devel/iteration_by_sectors/server/polygon_grids_v03_server.r` | 32 | `/home/wilar/Documents/SLU/3PG/devel` |
 | `devel/iteration_by_sectors/server/polygon_grids_v03_server.r` | 70 | `/home/wilar/datos/3PG` |
+| `devel/mosaic_grids.r` | 26 | `/media/wihe/LaCie/projects/3PG` |
+| `devel/mosaic_grids.r` | 31 | `/media/wihe/LaCie/projects/3PG/outputs_3PG/` |
+| `devel/mosaic_grids.r` | 46 | `/media/wihe/LaCie/projects/3PG/out_3PG_netcdf/GPP.nc` |
+| `devel/mosaic_grids.r` | 136 | `/home/wihe/Documents/slu_locals/3PG/devel/mosaic_Kryckland_3PG_GPP_output.pdf` |
 | `devel/polygon_grids_v01.r` | 26 | `/media/wihe/LaCie/projects/3PG` |
 
 ## Not included
