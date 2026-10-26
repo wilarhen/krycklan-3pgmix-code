@@ -43,7 +43,8 @@ From the authors' pipeline notes, with the scripts written after them placed in 
 | Group | Where it ran | Versions |
 |---|---|---|
 | Corrected-cube pipeline, assembly and QC; scripts 29 (server copy), 30, 51 to 54 and 58 | Processing server | R 4.5.2, terra 1.8-86, sf 1.0.23, r3PG 0.1.6 (terra logged; R and sf are the server's installed versions, not logged) |
-| Initial cube: tiles (`polygon_grids_v01.r`) and their NetCDF conversion (`mosaic_grids.r`) | Processing server | terra 1.8-80 for the conversion (from the metadata of `GPP.nc`); for the tiles, terra, R and r3PG not recorded |
+| Initial cube: per-sector tiles (`polygon_grids_v01.r`) | Remote workstation under Windows Subsystem for Linux, accessed over SSH | terra, R and r3PG not recorded |
+| Initial cube: NetCDF conversion of the tiles (`mosaic_grids.r`) | Laptop | terra 1.8-80 (from the metadata of `GPP.nc`) |
 | Cube scoring (03) | Server and local machine | as above, or the local versions |
 | Plot-level runs, statistics, tables, figures 1 (local copy), 4 to 6, and the other checks | Local machine | R 4.6.1, terra 1.9-27, sf 1.1.1, r3PG 0.1.6 |
 | `modis_dsr_export.js` | Google Earth Engine | not recorded |
